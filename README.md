@@ -8,17 +8,20 @@ The primary question this project seeks to answer is: **Are wedding vendors with
 
 ## Key Terms
   **Sustainable Practices**: In the wedding industry, this refers to vendors using eco-friendly methods such as sourcing local and organic materials, reducing waste, and recycling.
+  
   **Cost-Effectiveness**: This refers to achieving the best possible value for money spent, balancing cost with the quality and benefits of the services provided.
     
 ## Methodology
    **Data Extraction**:
       Using SQL to retrieve relevant data on wedding vendors, focusing on their pricing and sustainability practices.
+      
    **Data Analysis**:
       Analyzing the extracted data using Python to create visualizations and derive insights that address the business question.
       
 ## Insights & Findings
    **Pricing Differences**:
       The analysis showed that non-sustainable wedding vendors tend to be more cost-effective than sustainable ones, offering lower prices with less variability.
+      
   **Statistical Evidence**:
       A two-way ANOVA test confirmed significant differences in pricing between sustainable and non-sustainable vendors, with product categories also playing a major role in            cost determination.
       

@@ -1,0 +1,30 @@
+use wedding_database;
+
+select v.vendor_id,
+case /*using case statement to assign numbers for specific department */
+when vendor_depart ='dress and attire' then '1'
+when vendor_depart ='catering' then '2'
+when vendor_depart='music' then '3'
+when vendor_depart='flowers' then '4'
+when vendor_depart='hair and makeup' then '5'
+when vendor_depart='invitations' then '6'
+when vendor_depart='jewelry' then '7'
+when vendor_depart ='rental' then '8'
+when vendor_depart='venues' then '9'
+else '10'
+end as vendor_category_no, 
+vendor_depart,
+vendor_location,
+vendor_sustainable,
+product_id,
+price_unit,
+cast(vendor_rating as float) as rating,  /* converting the vendor_rating datatype tinyint to float for my analysis */
+price_ce,
+case      /* Assigning cost effectiveness across quantiled values,with 1st and 2nd quartile values as cost effective and 3rd and 4th as not cost effective*/
+when price_ce in ('4','3') then "No"
+else "Yes"
+end as Is_cost_effective
+from  products as p   /* products and vendor table have been joined using inner join function*/
+inner join vendors as v
+on p.vendor_id = v.vendor_id  
+where price_unit != '0'; /* extracting only non zero values for analysis*/
